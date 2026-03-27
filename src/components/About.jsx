@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, ShieldCheck, Clock, Brush } from 'lucide-react';
 import { companyData } from '../data/config';
+import paintingCrewImage from '../assets/painting-crew.svg';
 
 const About = () => {
   const highlights = [
@@ -23,7 +24,7 @@ const About = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1595844730298-b9f1ff9b5993?q=80&w=1000&auto=format&fit=crop"
+                src={paintingCrewImage}
                 alt="Equipe de pintura trabalhando"
                 className="w-full h-auto object-cover scale-105 hover:scale-100 transition-transform duration-700"
               />
@@ -49,7 +50,7 @@ const About = () => {
               Excelência em pintura para quem exige o <span className="text-primary-600">melhor acabamento.</span>
             </h2>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-              Liderada por {companyData.owner}, a {companyData.name} nasceu com o propósito de elevar o padrão dos serviços de pintura.
+              Sob a liderança dos sócios {companyData.ownersLabel}, a {companyData.name} nasceu com o propósito de elevar o padrão dos serviços de pintura.
               Nossa missão é transformar ambientes residenciais e comerciais através de um trabalho humanizado,
               técnico e extremamente cuidadoso.
             </p>
@@ -75,7 +76,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-xl active:scale-95"
               >
-                Falar com {companyData.owner}
+                Falar com {companyData.ownersLabel}
               </a>
               <div className="h-10 w-px bg-slate-200" />
               <p className="text-slate-500 font-medium italic">

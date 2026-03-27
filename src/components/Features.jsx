@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { features } from '../data/config';
 import { BadgeCheck } from 'lucide-react';
+import paintingInteriorImage from '../assets/painting-interior.svg';
 
 const Features = () => {
   return (
@@ -43,7 +44,7 @@ const Features = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-slate-800">
                <img
-                src="https://images.unsplash.com/photo-1595844730298-b9f1ff9b5993?q=80&w=1000&auto=format&fit=crop"
+                src={paintingInteriorImage}
                 alt="Pintor detalhista"
                 className="w-full h-auto object-cover"
               />

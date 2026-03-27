@@ -1,14 +1,19 @@
+import paintingInteriorImage from "../assets/painting-interior.svg";
+import paintingCommercialImage from "../assets/painting-commercial.svg";
+import paintingExteriorImage from "../assets/painting-exterior.svg";
+
 export const companyData = {
   name: "Point Pintura",
-  owner: "João Silva",
-  phone: "5511999999999", // Formato para link do WhatsApp
-  phoneFormatted: "(11) 99999-9999",
-  city: "São Paulo e Grande SP",
-  email: "contato@pointpintura.com.br",
-  address: "Atendimento em toda a região de São Paulo",
+  owners: ["Fabio", "Rocelio"],
+  ownersLabel: "Fabio e Rocelio",
+  phone: "5521964149614", // Formato para link do WhatsApp
+  phoneFormatted: "(21) 96414-9640",
+  city: "Rio de Janeiro ",
+  email: "fabioalbuquerquepinturaspva@gmail.com.br",
+  address: "Atendimento em toda a região do Rio de janeiro",
   socials: {
-    instagram: "https://instagram.com/pointpintura",
-    facebook: "https://facebook.com/pointpintura",
+    instagram: "https://instagram.com/pointda.pintura",
+    facebook: "https://facebook.com/pointda.pintura",
   }
 };
 
@@ -69,42 +74,42 @@ export const projects = [
     title: "Apartamento Vila Mariana",
     category: "Residencial",
     description: "Pintura completa com acabamento acetinado em tons pastéis.",
-    image: "https://images.unsplash.com/photo-1562663474-6cbb3fee4c77?q=80&w=800&auto=format&fit=crop"
+    image: paintingInteriorImage
   },
   {
     id: 2,
     title: "Escritório Itaim Bibi",
     category: "Comercial",
     description: "Aplicação de cores corporativas e textura em parede de destaque.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+    image: paintingCommercialImage
   },
   {
     id: 3,
     title: "Fachada de Sobrado",
     category: "Externa",
     description: "Pintura externa com tinta emborrachada para máxima proteção.",
-    image: "https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?q=80&w=800&auto=format&fit=crop"
+    image: paintingExteriorImage
   },
   {
     id: 4,
     title: "Loja de Shopping",
     category: "Comercial",
     description: "Trabalho realizado em horário especial com rapidez e limpeza total.",
-    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=800&auto=format&fit=crop"
+    image: paintingCommercialImage
   },
   {
     id: 5,
     title: "Cozinha e Sala Integrada",
     category: "Residencial",
     description: "Renovação de ambientes com tintas laváveis de alta qualidade.",
-    image: "https://images.unsplash.com/photo-1556912177-c54030639a4c?q=80&w=800&auto=format&fit=crop"
+    image: paintingInteriorImage
   },
   {
     id: 6,
     title: "Condomínio Residencial",
     category: "Externa",
     description: "Pintura de áreas comuns e muros com textura decorativa.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop"
+    image: paintingExteriorImage
   }
 ];
 

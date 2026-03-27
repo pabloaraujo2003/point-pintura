@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import { companyData } from '../data/config';
+import paintingCrewImage from '../assets/painting-crew.svg';
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1589939705384-5185138a04b9?q=80&w=2000&auto=format&fit=crop"
+          src={paintingCrewImage}
           alt="Pintor profissional trabalhando"
           className="w-full h-full object-cover"
         />
