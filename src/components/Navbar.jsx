@@ -20,7 +20,7 @@ const Navbar = () => {
     { name: 'Sobre', href: '#about' },
     { name: 'Serviços', href: '#services' },
     { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Depoimentos', href: '#testimonials' },
+    { name: 'Avaliações', href: '#testimonials' },
   ];
 
   return (
@@ -61,7 +61,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-primary-500/20 active:scale-95"
           >
-            Orçamento Grátis
+            Pedir Orçamento
           </a>
         </div>
 

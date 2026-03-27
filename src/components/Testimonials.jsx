@@ -4,13 +4,13 @@ import { Star, Quote } from 'lucide-react';
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-slate-50">
+    <section id="testimonials" className="py-24 bg-primary-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Depoimentos</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">O que dizem os <span className="text-primary-600">nossos clientes</span></h2>
+          <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Prova Social</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Depoimentos que reforçam <span className="text-primary-600">confiança e qualidade</span></h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            A satisfação de quem confiou no nosso trabalho é o que nos move a entregar o melhor resultado em cada projeto.
+            A seção foi mantida com linguagem direta para passar segurança, acolhimento e resultado profissional.
           </p>
         </div>
 

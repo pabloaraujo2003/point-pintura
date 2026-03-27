@@ -16,7 +16,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-slate-400 leading-relaxed text-sm">
-              Especialistas em transformar ambientes com cor, qualidade e profissionalismo. Há mais de 10 anos sendo referência em acabamentos finos.
+              Portfólio digital com foco em pintura residencial, pintura comercial e reformas, apresentado com clareza, confiança e acolhimento.
             </p>
             <div className="flex gap-4">
               <a href={companyData.socials.instagram} target="_blank" rel="noopener noreferrer" className="bg-slate-900 p-3 rounded-xl hover:bg-primary-600 hover:text-white transition-all border border-slate-800">
@@ -31,7 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-sm">Serviços</h4>
             <ul className="flex flex-col gap-4 text-sm">
-              {services.slice(0, 5).map((service) => (
+              {services.map((service) => (
                 <li key={service.id}>
                   <a href="#services" className="hover:text-primary-400 transition-colors">{service.title}</a>
                 </li>
@@ -43,9 +43,9 @@ const Footer = () => {
             <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-sm">Links Rápidos</h4>
             <ul className="flex flex-col gap-4 text-sm">
               <li><a href="#home" className="hover:text-primary-400 transition-colors">Início</a></li>
-              <li><a href="#about" className="hover:text-primary-400 transition-colors">Sobre Nós</a></li>
+              <li><a href="#about" className="hover:text-primary-400 transition-colors">Sobre a Empresa</a></li>
               <li><a href="#portfolio" className="hover:text-primary-400 transition-colors">Nosso Portfólio</a></li>
-              <li><a href="#testimonials" className="hover:text-primary-400 transition-colors">Depoimentos</a></li>
+              <li><a href="#testimonials" className="hover:text-primary-400 transition-colors">Prova Social</a></li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-medium text-slate-500 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} {companyData.name}. Todos os direitos reservados.</p>
-          <p>Feito por <a href="#" className="text-primary-500">Pablo Araújo</a></p>
+          <p>Point da Pintura | Rio de Janeiro</p>
         </div>
       </div>
     </footer>

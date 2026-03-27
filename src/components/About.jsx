@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, ShieldCheck, Clock, Brush } from 'lucide-react';
+import { ShieldCheck, Clock, Brush, Palette } from 'lucide-react';
 import { companyData } from '../data/config';
 import paintingCrewImage from '../assets/painting-crew.svg';
 
 const About = () => {
   const highlights = [
-    { icon: Brush, text: "Acabamento de Alto Padrão", sub: "Qualidade superior em cada pincelada." },
-    { icon: Clock, text: "Compromisso com Prazos", sub: "Respeito total ao cronograma da obra." },
-    { icon: ShieldCheck, text: "Confiança e Transparência", sub: "Trabalho honesto e preços justos." },
-    { icon: CheckCircle2, text: "Limpeza Pós-Obra", sub: "Entregamos seu ambiente impecável." },
+    { icon: Brush, text: "Acabamento Profissional", sub: "Execução cuidadosa para valorizar cada ambiente." },
+    { icon: Palette, text: "Cores que Acolhem", sub: "Escolhas visuais pensadas para deixar o espaço mais agradável." },
+    { icon: Clock, text: "Compromisso com Prazo", sub: "Organização real do início ao fim do serviço." },
+    { icon: ShieldCheck, text: "Confiança no Atendimento", sub: "Transparência no orçamento e respeito com seu espaço." },
   ];
 
   return (
@@ -45,14 +45,14 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2"
           >
-            <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Sobre Nós</span>
+            <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Sobre a Empresa</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              Excelência em pintura para quem exige o <span className="text-primary-600">melhor acabamento.</span>
+              Pintura e reformas com <span className="text-primary-600">cuidado, técnica e presença profissional.</span>
             </h2>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-              Sob a liderança dos sócios {companyData.ownersLabel}, a {companyData.name} nasceu com o propósito de elevar o padrão dos serviços de pintura.
-              Nossa missão é transformar ambientes residenciais e comerciais através de um trabalho humanizado,
-              técnico e extremamente cuidadoso.
+              Sob a liderança dos sócios {companyData.ownersLabel}, a {companyData.name} atua com pintura residencial,
+              pintura comercial e reformas, sempre com linguagem clara, acabamento bem executado e atendimento próximo.
+              Nosso objetivo é transmitir segurança desde o primeiro contato até a entrega final.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -80,7 +80,7 @@ const About = () => {
               </a>
               <div className="h-10 w-px bg-slate-200" />
               <p className="text-slate-500 font-medium italic">
-                "Qualidade não é um diferencial, é nossa obrigação."
+                "Profissionalismo, acolhimento e acabamento em cada detalhe."
               </p>
             </div>
           </motion.div>

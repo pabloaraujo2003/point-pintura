@@ -14,10 +14,10 @@ const Features = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-primary-400 font-bold uppercase tracking-widest text-sm mb-4 block">Nossos Diferenciais</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Por que escolher a nossa <span className="text-primary-400">equipe de pintura?</span></h2>
+            <span className="text-primary-300 font-bold uppercase tracking-widest text-sm mb-4 block">Nossos Diferenciais</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Um visual acolhedor com base em <span className="text-primary-300">qualidade, clareza e confiança</span></h2>
             <p className="text-slate-400 text-lg mb-12 max-w-xl">
-              Combinamos técnica, paixão e os melhores materiais para garantir que seu investimento se transforme em um ambiente renovado e duradouro.
+              Cada detalhe da apresentação foi pensado para refletir o jeito da empresa trabalhar: proximidade no atendimento, segurança no processo e resultado final de alto padrão.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">

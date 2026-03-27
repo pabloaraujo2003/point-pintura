@@ -15,9 +15,9 @@ const Portfolio = () => {
             className="max-w-2xl"
           >
             <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Portfólio</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Trabalhos que <span className="text-primary-600">falam por nós</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Projetos apresentados com <span className="text-primary-600">clareza e credibilidade</span></h2>
             <p className="text-slate-600 text-lg">
-              Confira alguns dos nossos projetos recentes em residências e empresas. Cada projeto é tratado com exclusividade.
+              As imagens e descrições foram organizadas para valorizar o serviço executado e facilitar a leitura de quem está pedindo orçamento.
             </p>
           </motion.div>
           
@@ -27,9 +27,9 @@ const Portfolio = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-             <button className="bg-slate-100 hover:bg-slate-200 text-slate-900 px-6 py-3 rounded-xl font-bold transition-colors">
-              Ver todos os projetos
-            </button>
+             <div className="rounded-2xl border border-primary-100 bg-primary-50 px-6 py-4 text-sm font-semibold text-slate-700">
+              Visual limpo para residências, comércios e reformas
+            </div>
           </motion.div>
         </div>
 
