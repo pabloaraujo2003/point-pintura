@@ -1,5 +1,14 @@
 # React + Vite
 
+## Node.js version
+
+This project uses `vite@8`, which requires Node.js `20.19+` or `22.12+`.
+If you use `nvm`, `fnm`, or another version manager, switch to the pinned version before installing or running the app:
+
+```bash
+nvm use
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

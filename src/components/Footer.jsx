@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-medium text-slate-500 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} {companyData.name}. Todos os direitos reservados.</p>
-          <p>Feito com ❤️ por <a href="#" className="text-primary-500">Equipe Point Pintura</a></p>
+          <p>Feito por <a href="#" className="text-primary-500">Pablo Araújo</a></p>
         </div>
       </div>
     </footer>
