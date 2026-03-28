@@ -45,9 +45,6 @@ const Services = () => {
                 <p className="text-slate-500 leading-relaxed text-sm mb-5 md:mb-6">
                   {service.description}
                 </p>
-                <span className="inline-flex rounded-full bg-slate-900 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white">
-                  Atendimento profissional
-                </span>
               </motion.div>
             );
           })}

@@ -3,7 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
-import Features from './components/Features';
+import BeforeAfter from './components/BeforeAfter';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -19,7 +19,7 @@ function App() {
         <About />
         <Services />
         <Portfolio />
-        <Features />
+        <BeforeAfter />
         <Testimonials />
         <CTA />
       </main>

@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Clock, Brush, Palette } from 'lucide-react';
+import { ShieldCheck, Clock, Brush } from 'lucide-react';
 import { companyData } from '../data/config';
-import paintingCrewImage from '../assets/painting-crew.svg';
+import aboutImage from '../assets/loja-comercial.png';
 
 const About = () => {
   const highlights = [
     { icon: Brush, text: "Acabamento Profissional", sub: "Execução cuidadosa para valorizar cada ambiente." },
-    { icon: Palette, text: "Cores que Acolhem", sub: "Escolhas visuais pensadas para deixar o espaço mais agradável." },
     { icon: Clock, text: "Compromisso com Prazo", sub: "Organização real do início ao fim do serviço." },
-    { icon: ShieldCheck, text: "Confiança no Atendimento", sub: "Transparência no orçamento e respeito com seu espaço." },
+    { icon: ShieldCheck, text: "Confiança no Atendimento", sub: "Transparência no orçamento e respeito com seu espaço." }
   ];
 
   return (
@@ -24,8 +23,8 @@ const About = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src={paintingCrewImage}
-                alt="Equipe de pintura trabalhando"
+                src={aboutImage}
+                alt="Loja comercial pintada pela Point da Pintura"
                 className="w-full h-auto object-cover scale-105 hover:scale-100 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 to-transparent" />
@@ -78,10 +77,6 @@ const About = () => {
               >
                 Falar com {companyData.ownersLabel}
               </a>
-              <div className="hidden sm:block h-10 w-px bg-slate-200" />
-              <p className="text-slate-500 font-medium italic text-sm md:text-base">
-                "Profissionalismo, acolhimento e acabamento em cada detalhe."
-              </p>
             </div>
           </motion.div>
         </div>

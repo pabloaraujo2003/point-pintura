@@ -1,6 +1,8 @@
-import paintingInteriorImage from "../assets/painting-interior.svg";
-import paintingCommercialImage from "../assets/painting-commercial.svg";
-import paintingExteriorImage from "../assets/painting-exterior.svg";
+import ambienteIntegradoImage from "../assets/ambiente integrado.jpeg";
+import antesImage from "../assets/antes.jpeg";
+import depoisImage from "../assets/depois.png";
+import fachadaResidencialImage from "../assets/fachada-residencial.jpeg";
+import lojaComercialImage from "../assets/loja-comercial.png";
 
 export const companyData = {
   name: "Point da Pintura",
@@ -44,45 +46,24 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "Apartamento Renovado",
+    title: "Ambiente Integrado",
     category: "Residencial",
-    description: "Projeto com pintura interna em tons claros, correções finas e acabamento acetinado.",
-    image: paintingInteriorImage
+    description: "Ambiente interno com leitura mais clara, acabamento uniforme e sensação de espaço renovado.",
+    image: ambienteIntegradoImage
   },
   {
     id: 2,
-    title: "Escritório Corporativo",
-    category: "Comercial",
-    description: "Aplicação de cores institucionais com organização, limpeza e agilidade na entrega.",
-    image: paintingCommercialImage
-  },
-  {
-    id: 3,
     title: "Fachada Residencial",
     category: "Externa",
     description: "Renovação externa com proteção contra umidade e visual mais valorizado.",
-    image: paintingExteriorImage
+    image: fachadaResidencialImage
   },
   {
-    id: 4,
+    id: 3,
     title: "Loja Comercial",
     category: "Comercial",
     description: "Execução em horário planejado para reduzir impacto e manter a operação do espaço.",
-    image: paintingCommercialImage
-  },
-  {
-    id: 5,
-    title: "Ambiente Integrado",
-    category: "Residencial",
-    description: "Renovação de sala e cozinha com tintas laváveis e visual contemporâneo.",
-    image: paintingInteriorImage
-  },
-  {
-    id: 6,
-    title: "Área Comum Reformada",
-    category: "Reformas",
-    description: "Correções, preparação e pintura de áreas coletivas com acabamento uniforme.",
-    image: paintingExteriorImage
+    image: lojaComercialImage
   }
 ];
 
@@ -107,6 +88,31 @@ export const testimonials = [
     role: "Gerente Comercial",
     content: "Conseguimos renovar a loja com rapidez e sem bagunça. Foi uma entrega profissional do início ao fim.",
     rating: 5
+  }
+];
+
+export const videoReviews = [
+  {
+    id: 1,
+    title: "Review em video de obra finalizada",
+    clientName: "Projeto residencial entregue",
+    role: "Tour visual no Instagram",
+    quote: "Veja o resultado final de uma casa ja pintada, com foco no acabamento e na apresentacao do ambiente pronto.",
+    platform: "Instagram Reel",
+    videoUrl: "https://www.instagram.com/reel/DMBFrqaRsvf/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ=="
+  }
+];
+
+export const beforeAfterProjects = [
+  {
+    id: 1,
+    title: "Fachada residencial",
+    category: "Pintura externa",
+    beforeImage: antesImage,
+    afterImage: depoisImage,
+    beforeLabel: "Fachada antes da preparação, com aspecto mais desgastado e leitura visual menos valorizada.",
+    afterLabel: "Fachada finalizada com pintura renovada, acabamento uniforme e apresentação mais limpa.",
+    summary: "Comparativo real de fachada para mostrar a transformação visual e o ganho de valorização depois da pintura."
   }
 ];
 

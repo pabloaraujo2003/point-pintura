@@ -70,20 +70,6 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="hero-stats mt-12 flex items-center gap-8 md:gap-16">
-            <div className="hero-stat flex flex-col items-center">
-              <span className="text-white text-3xl font-bold">20+</span>
-              <span className="text-slate-300 text-xs uppercase tracking-widest font-semibold">Anos de Mercado</span>
-            </div>
-            <div className="hero-stat flex flex-col items-center">
-              <span className="text-white text-3xl font-bold">500+</span>
-              <span className="text-slate-300 text-xs uppercase tracking-widest font-semibold">Ambientes Entregues</span>
-            </div>
-            <div className="hero-stat flex flex-col items-center">
-              <span className="text-white text-3xl font-bold">100%</span>
-              <span className="text-slate-300 text-xs uppercase tracking-widest font-semibold">Compromisso no Atendimento</span>
-            </div>
-          </div>
         </motion.div>
       </div>
 

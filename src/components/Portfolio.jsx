@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
-import { projects } from '../data/config';
-import { ExternalLink } from 'lucide-react';
+import { projects, videoReviews } from '../data/config';
+import { ExternalLink, Play, ArrowUpRight, Instagram } from 'lucide-react';
 
 const Portfolio = () => {
+  const featuredVideo = videoReviews[0];
+
   return (
     <section id="portfolio" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -33,6 +35,86 @@ const Portfolio = () => {
             </div>
           </motion.div>
         </div>
+
+        {featuredVideo && (
+          <motion.a
+            href={featuredVideo.videoUrl}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="group mb-8 md:mb-10 block overflow-hidden rounded-[2rem] border border-primary-100 bg-primary-50 shadow-lg"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="relative min-h-[260px] overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.2),_transparent_32%),linear-gradient(135deg,_#7c2d12_0%,_#ea580c_45%,_#fdba74_100%)] p-6 md:p-10">
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.08),rgba(15,23,42,0.42))]" />
+                <div className="relative flex h-full flex-col justify-between">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-white">
+                      <Instagram className="h-4 w-4" />
+                      {featuredVideo.platform}
+                    </span>
+                    <span className="rounded-full bg-white/12 px-3 py-1 text-xs font-semibold text-white/90">
+                      Review de obra
+                    </span>
+                  </div>
+
+                  <div className="max-w-xl">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary-100">
+                      Tour visual
+                    </p>
+                    <h3 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+                      {featuredVideo.title}
+                    </h3>
+                    <p className="max-w-md text-sm leading-relaxed text-white/85 md:text-base">
+                      {featuredVideo.quote}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-primary-600 transition-transform duration-300 group-hover:scale-110">
+                      <Play className="ml-1 h-7 w-7 fill-current" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/75">
+                        Abrir review
+                      </p>
+                      <p className="text-xs text-white/70">
+                        Veja a casa pronta no Instagram
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between p-6 md:p-8">
+                <div>
+                  <span className="mb-4 inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.22em] text-primary-700">
+                    Destaque em video
+                  </span>
+                  <blockquote className="mb-6 text-lg font-semibold leading-relaxed text-slate-900 md:text-2xl">
+                    "{featuredVideo.quote}"
+                  </blockquote>
+                </div>
+
+                <div className="flex items-end justify-between gap-4 border-t border-primary-100 pt-6">
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-900">{featuredVideo.clientName}</h4>
+                    <p className="text-sm font-medium uppercase tracking-wider text-slate-400">
+                      {featuredVideo.role}
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600">
+                    Ver no Instagram
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.a>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {projects.map((project, idx) => (
