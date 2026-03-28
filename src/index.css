@@ -34,6 +34,10 @@
     color: #0f172a;
     font-family: "Poppins", system-ui, sans-serif;
   }
+
+  p {
+    text-wrap: pretty;
+  }
 }
 
 :root {

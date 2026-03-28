@@ -6,10 +6,13 @@ export const companyData = {
   name: "Point da Pintura",
   owners: ["Fabio", "Rocelio"],
   ownersLabel: "Fabio e Rocelio",
-  phone: "5521964149614", // Formato para link do WhatsApp
+  phone: "5521964149640", // Formato para link do WhatsApp
   phoneFormatted: "(21) 96414-9640",
+  secondaryPhone: "5521993162177",
+  secondaryPhoneFormatted: "(21) 99316-2177",
   city: "Rio de Janeiro",
   email: "fabioalbuquerquepinturaspva@gmail.com.br",
+  secondaryEmail: "roceliobe@gmail.com",
   address: "Atendimento em toda a região do Rio de Janeiro",
   socials: {
     instagram: "https://instagram.com/pointda.pintura",

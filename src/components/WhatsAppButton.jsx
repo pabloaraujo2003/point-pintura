@@ -13,13 +13,13 @@ const WhatsAppButton = () => {
       transition={{ delay: 1, type: 'spring' }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:shadow-[#25D366]/40 transition-shadow group"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[60] bg-[#25D366] text-white p-3.5 md:p-4 rounded-full shadow-2xl flex items-center justify-center hover:shadow-[#25D366]/40 transition-shadow group"
       aria-label="Falar no WhatsApp"
     >
-      <div className="absolute right-full mr-3 bg-white text-slate-900 px-4 py-2 rounded-xl font-bold text-sm shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      <div className="absolute right-full mr-3 bg-white text-slate-900 px-4 py-2 rounded-xl font-bold text-sm shadow-xl opacity-0 md:group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block">
         Olá! Como posso ajudar?
       </div>
-      <MessageSquare className="w-8 h-8 fill-white" />
+      <MessageSquare className="w-7 h-7 md:w-8 md:h-8 fill-white" />
     </motion.a>
   );
 };

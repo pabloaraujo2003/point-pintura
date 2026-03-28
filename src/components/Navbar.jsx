@@ -28,13 +28,13 @@ const Navbar = () => {
       "fixed w-full z-50 transition-all duration-300 px-4 py-3",
       scrolled ? "bg-white/90 backdrop-blur-md shadow-md py-2" : "bg-transparent"
     )}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" className="flex items-center gap-2 group">
+      <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
+        <a href="#home" className="flex items-center gap-2 group min-w-0">
           <div className="bg-primary-600 p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
             <Paintbrush className="w-6 h-6 text-white" />
           </div>
           <span className={cn(
-            "text-xl font-bold tracking-tight transition-colors",
+            "text-base sm:text-xl font-bold tracking-tight transition-colors truncate",
             scrolled ? "text-slate-900" : "text-white"
           )}>
             {companyData.name}
