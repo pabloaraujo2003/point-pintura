@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-primary-50 selection:bg-primary-200 selection:text-slate-900">
+    <div className="min-h-screen bg-ink">
       <Navbar />
       <main>
         <Hero />

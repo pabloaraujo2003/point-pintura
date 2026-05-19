@@ -1,17 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #fff7ed;
-  --color-primary-100: #ffedd5;
-  --color-primary-200: #fed7aa;
-  --color-primary-300: #fdba74;
-  --color-primary-400: #fb923c;
-  --color-primary-500: #f97316;
-  --color-primary-600: #ea580c;
-  --color-primary-700: #c2410c;
+  /* ── Nova paleta "Pintura como Arte" ─────────────────────── */
+  --color-ink: #0F0E0A;
+  --color-ember: #E85D04;
+  --color-cream: #F5F0E8;
+  --color-clay: #C4502A;
+  --color-gold: #F0A500;
+  --color-fog: #E8E0D5;
+
+  /* aliases primary-* para BeforeAfter/Features não quebrarem */
+  --color-primary-50: #F5F0E8;
+  --color-primary-100: #E8E0D5;
+  --color-primary-200: #d4c4b0;
+  --color-primary-300: #C4502A;
+  --color-primary-400: #E85D04;
+  --color-primary-500: #E85D04;
+  --color-primary-600: #E85D04;
+  --color-primary-700: #C4502A;
   --color-primary-800: #9a3412;
-  --color-primary-900: #7c2d12;
-  --color-primary-950: #431407;
+  --color-primary-900: #0F0E0A;
+  --color-primary-950: #0F0E0A;
+
+  /* ── Fontes ──────────────────────────────────────────────── */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-heading: "Syne", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
 }
 
 @layer base {
@@ -20,26 +34,56 @@
   }
 
   body {
-    background: #fff7ed;
-    color: #334155;
-    font-family: "Open Sans", system-ui, sans-serif;
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #0f172a;
-    font-family: "Poppins", system-ui, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-cream);
+    font-family: var(--font-heading);
   }
 
   p {
     text-wrap: pretty;
   }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-cream);
+  }
 }
 
-:root {
-  font-family: "Open Sans", system-ui, sans-serif;
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Grain noise overlay — aplicado como pseudo-elemento */
+  .texture-noise {
+    position: relative;
+  }
+  .texture-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: 1;
+  }
+
+  .texture-noise-dark::after {
+    opacity: 0.065;
+  }
 }

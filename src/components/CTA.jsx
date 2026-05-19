@@ -1,50 +1,126 @@
 import { motion } from 'framer-motion';
-import { MessageSquare, Phone } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { companyData } from '../data/config';
 
 const CTA = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-slate-900 rounded-[2rem] md:rounded-[3rem] p-7 sm:p-9 md:p-20 text-white flex flex-col items-center text-center relative overflow-hidden shadow-2xl shadow-slate-900/30"
-        >
-          <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-primary-500/20 rounded-full blur-3xl -mr-24 md:-mr-32 -mt-24 md:-mt-32" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 md:w-64 md:h-64 bg-white/10 rounded-full blur-3xl -ml-24 md:-ml-32 -mb-24 md:-mb-32" />
+    <section className="cta-section texture-noise texture-noise-dark py-16 md:py-28">
+      <div
+        className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(232,93,4,0.07) 0%, transparent 70%)',
+          transform: 'translate(40%, -40%)',
+        }}
+        aria-hidden="true"
+      />
 
-          <h2 className="text-3xl md:text-6xl font-bold mb-5 md:mb-8 relative z-10 leading-tight">
-            Solicite seu orçamento com uma equipe <br className="hidden md:block" /> que cuida do seu ambiente
-          </h2>
-          <p className="text-base md:text-2xl text-slate-300 mb-8 md:mb-12 max-w-2xl relative z-10 leading-relaxed">
-            Atendimento direto pelo WhatsApp ou telefone para tirar dúvidas, alinhar o serviço e montar um orçamento profissional em {companyData.city}.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 relative z-10 w-full sm:w-auto">
-            <a
-              href={`https://wa.me/${companyData.phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary-500 text-white hover:bg-primary-400 px-8 md:px-10 py-4 md:py-5 rounded-2xl text-lg md:text-xl font-bold transition-all flex items-center justify-center gap-3 shadow-xl active:scale-95 group w-full sm:w-auto"
-            >
-              <MessageSquare className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              Pedir orçamento
-            </a>
-            <div className="flex items-center justify-center sm:justify-start gap-3 text-white/90 w-full sm:w-auto rounded-2xl sm:rounded-none bg-white/5 sm:bg-transparent px-4 py-3 sm:p-0 border border-white/10 sm:border-0">
-              <div className="w-11 h-11 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
-                <Phone className="w-6 h-6" />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary-200">Ou fale direto</p>
-                <p className="text-base md:text-lg font-bold">Fabio: {companyData.phoneFormatted}</p>
-                <p className="text-base md:text-lg font-bold">Rocelio: {companyData.secondaryPhoneFormatted}</p>
-              </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-8 md:gap-12 lg:gap-20">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:w-1/2"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="inline-block w-6 h-px flex-shrink-0"
+                style={{ background: 'var(--color-ember)' }}
+              />
+              <span
+                className="text-xs font-bold uppercase tracking-[0.22em]"
+                style={{ color: 'var(--color-ember)', fontFamily: 'var(--font-body)' }}
+              >
+                Solicite seu Orçamento
+              </span>
             </div>
-          </div>
-        </motion.div>
+
+            <h2
+              className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
+              style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-cream)' }}
+            >
+              Cuide do seu ambiente com quem entende do{' '}
+              <span style={{ color: 'var(--color-ember)' }}>serviço</span>
+            </h2>
+
+            <p
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: 'rgba(245,240,232,0.55)', fontFamily: 'var(--font-body)' }}
+            >
+              Atendimento direto pelo WhatsApp para tirar dúvidas, alinhar o serviço e montar
+              um orçamento profissional em {companyData.city}.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:w-1/2 flex flex-col gap-8"
+          >
+            <div
+              className="rounded-2xl p-6 md:p-8"
+              style={{
+                background: 'rgba(245,240,232,0.04)',
+                border: '1px solid rgba(245,240,232,0.1)',
+              }}
+            >
+              <p
+                className="text-xs font-bold uppercase tracking-[0.22em] mb-4"
+                style={{ color: 'rgba(245,240,232,0.4)', fontFamily: 'var(--font-body)' }}
+              >
+                Fale diretamente com os sócios
+              </p>
+
+              <div className="flex flex-col gap-3 mb-6">
+                <div>
+                  <p
+                    className="text-xs uppercase tracking-wider mb-0.5"
+                    style={{ color: 'rgba(245,240,232,0.4)', fontFamily: 'var(--font-body)' }}
+                  >
+                    Fabio
+                  </p>
+                  <p className="cta-phone-display">{companyData.phoneFormatted}</p>
+                </div>
+                <div>
+                  <p
+                    className="text-xs uppercase tracking-wider mb-0.5"
+                    style={{ color: 'rgba(245,240,232,0.4)', fontFamily: 'var(--font-body)' }}
+                  >
+                    Rocelio
+                  </p>
+                  <p className="cta-phone-display">{companyData.secondaryPhoneFormatted}</p>
+                </div>
+              </div>
+
+              <a
+                href={`https://wa.me/${companyData.phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 w-full py-4 rounded-xl font-bold text-base transition-colors active:scale-95"
+                style={{
+                  background: 'var(--color-ember)',
+                  color: 'var(--color-cream)',
+                  fontFamily: 'var(--font-body)',
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = 'var(--color-clay)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'var(--color-ember)'}
+              >
+                <MessageSquare className="w-5 h-5 group-hover:rotate-6 transition-transform" />
+                Pedir orçamento pelo WhatsApp
+              </a>
+            </div>
+
+            <p
+              className="text-xs leading-relaxed text-center"
+              style={{ color: 'rgba(245,240,232,0.3)', fontFamily: 'var(--font-body)' }}
+            >
+              Atendemos toda a região do {companyData.city}. Orçamento gratuito e sem compromisso.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

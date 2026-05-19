@@ -8,10 +8,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -24,34 +22,33 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={cn(
-      "fixed w-full z-50 transition-all duration-300 px-4 py-3",
-      scrolled ? "bg-white/90 backdrop-blur-md shadow-md py-2" : "bg-transparent"
-    )}>
+    <nav
+      className={cn(
+        "fixed w-full z-50 transition-all duration-300 px-4 py-3",
+        scrolled && "py-2"
+      )}
+      style={scrolled ? {
+        background: 'rgba(15,14,10,0.92)',
+        backdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(245,240,232,0.07)',
+      } : {}}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
-        <a href="#home" className="flex items-center gap-2 group min-w-0">
-          <div className="bg-primary-600 p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-            <Paintbrush className="w-6 h-6 text-white" />
+        <a href="#home" className="flex items-center gap-2.5 group min-w-0">
+          <div className="bg-ember p-1.5 rounded-md group-hover:scale-110 transition-transform">
+            <Paintbrush className="w-5 h-5 text-cream" />
           </div>
-          <span className={cn(
-            "text-base sm:text-xl font-bold tracking-tight transition-colors truncate",
-            scrolled ? "text-slate-900" : "text-white"
-          )}>
+          <span
+            className="text-base sm:text-lg font-bold tracking-tight text-cream truncate"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
             {companyData.name}
           </span>
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary-500",
-                scrolled ? "text-slate-600" : "text-slate-200"
-              )}
-            >
+            <a key={link.name} href={link.href} className="nav-link">
               {link.name}
             </a>
           ))}
@@ -59,34 +56,37 @@ const Navbar = () => {
             href={`https://wa.me/${companyData.phone}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-primary-500/20 active:scale-95"
+            className="px-5 py-2 rounded-full text-sm font-semibold transition-all border bg-ember text-cream border-ember hover:bg-clay hover:border-clay"
+            style={{ fontFamily: 'var(--font-body)' }}
           >
             Pedir Orçamento
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-md"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir menu"
         >
-          {isOpen ? (
-            <X className={scrolled ? "text-slate-900" : "text-white"} />
-          ) : (
-            <Menu className={scrolled ? "text-slate-900" : "text-white"} />
-          )}
+          {isOpen
+            ? <X className="text-cream" size={22} />
+            : <Menu className="text-cream" size={22} />
+          }
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-col p-4 gap-4">
+        <div
+          className="md:hidden absolute top-full left-0 w-full shadow-xl border-t border-cream/10"
+          style={{ background: 'rgba(15,14,10,0.97)', backdropFilter: 'blur(12px)' }}
+        >
+          <div className="flex flex-col p-4 gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-600 hover:text-primary-600 font-medium py-2 px-4 border-b border-slate-50"
+                className="font-medium py-3 px-4 border-b border-cream/10 text-sm transition-colors"
+                style={{ color: 'rgba(245,240,232,0.75)', fontFamily: 'var(--font-body)' }}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -96,7 +96,8 @@ const Navbar = () => {
               href={`https://wa.me/${companyData.phone}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary-600 text-white text-center py-3 rounded-xl font-bold"
+              className="text-cream text-center py-3 rounded-xl font-bold mt-2"
+              style={{ background: 'var(--color-ember)', fontFamily: 'var(--font-body)' }}
               onClick={() => setIsOpen(false)}
             >
               Solicitar Orçamento
