@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { MessageSquare, Phone } from 'lucide-react';
+import { MessageSquare, Phone, Mail } from 'lucide-react';
 import { companyData, whatsappLink } from '../data/config';
 
-const CTA = () => {
+const CTA = ({ onOpenModal }) => {
   return (
     <section className="cta-ember-section texture-noise py-20 md:py-32">
       {/* Decorative radial glows */}
@@ -162,6 +162,29 @@ const CTA = () => {
                 <MessageSquare className="w-5 h-5 flex-shrink-0" />
                 Pedir orçamento pelo WhatsApp
               </a>
+
+              <button
+                onClick={onOpenModal}
+                className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-semibold text-sm transition-all"
+                style={{
+                  background: 'transparent',
+                  border: '1.5px solid rgba(245,240,232,0.25)',
+                  color: 'rgba(245,240,232,0.8)',
+                  fontFamily: 'var(--font-body)',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.5)';
+                  e.currentTarget.style.background = 'rgba(245,240,232,0.07)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.25)';
+                  e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                Solicitar orçamento por e-mail
+              </button>
             </div>
 
             <p

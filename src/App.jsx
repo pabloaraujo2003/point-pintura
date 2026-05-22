@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,9 +10,12 @@ import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ContactModal from './components/ContactModal';
 import './App.css';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-ink">
       <Navbar />
@@ -23,10 +27,11 @@ function App() {
         <Portfolio />
         <BeforeAfter />
         <Testimonials />
-        <CTA />
+        <CTA onOpenModal={() => setIsModalOpen(true)} />
       </main>
       <Footer />
       <WhatsAppButton />
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
