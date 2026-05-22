@@ -4,6 +4,13 @@ import depoisImage from "../assets/depois.png";
 import fachadaResidencialImage from "../assets/fachada-residencial.jpeg";
 import lojaComercialImage from "../assets/loja-comercial.png";
 
+const WA_MESSAGE = encodeURIComponent(
+  'Olá! Vim pelo site da Point da Pintura e gostaria de fazer um orçamento com vocês.'
+);
+
+export const whatsappLink = (phone = '5521964149640') =>
+  `https://wa.me/${phone}?text=${WA_MESSAGE}`;
+
 export const companyData = {
   name: "Point da Pintura",
   owners: ["Fabio", "Rocelio"],

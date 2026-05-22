@@ -1,24 +1,24 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { companyData } from '../data/config';
+import { companyData, whatsappLink } from '../data/config';
 
 const wordContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.25,
+      staggerChildren: 0.065,
+      delayChildren: 0.2,
     },
   },
 };
 
 const wordItem = {
-  hidden: { opacity: 0, y: 60, clipPath: 'inset(0 0 100% 0)' },
+  hidden: { opacity: 0, y: 64, clipPath: 'inset(0 0 100% 0)' },
   visible: {
     opacity: 1,
     y: 0,
     clipPath: 'inset(0 0 0% 0)',
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -33,22 +33,51 @@ const PaintStrokeSVG = () => (
     <path
       d="M100 15 C58 48, 28 92, 42 155 C56 218, 96 240, 98 300 C100 360, 78 385, 100 408"
       stroke="#E85D04"
-      strokeWidth="20"
+      strokeWidth="22"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M80 15 C52 35, 44 75, 58 135"
       stroke="#F0A500"
-      strokeWidth="7"
+      strokeWidth="8"
       strokeLinecap="round"
-      opacity="0.55"
+      opacity="0.5"
     />
-    <ellipse cx="100" cy="413" rx="24" ry="9" fill="#E85D04" opacity="0.35" />
-    <circle cx="148" cy="88" r="6" fill="#F0A500" opacity="0.3" />
-    <circle cx="62" cy="210" r="4" fill="#E85D04" opacity="0.25" />
+    <ellipse cx="100" cy="413" rx="28" ry="10" fill="#E85D04" opacity="0.3" />
+    <circle cx="148" cy="88" r="7" fill="#F0A500" opacity="0.35" />
+    <circle cx="62" cy="210" r="5" fill="#E85D04" opacity="0.28" />
+    <circle cx="130" cy="310" r="3.5" fill="#F0A500" opacity="0.2" />
   </svg>
 );
+
+const HeroTicker = () => {
+  const items = [
+    'Pintura Residencial',
+    'Pintura Comercial',
+    'Reformas e Acabamentos',
+    'Rio de Janeiro',
+    '20 Anos de Mercado',
+    '500+ Projetos Entregues',
+    'Atendimento Profissional',
+    'Orçamento Sem Compromisso',
+  ];
+
+  const repeated = [...items, ...items];
+
+  return (
+    <div className="hero-ticker" aria-hidden="true">
+      <div className="hero-ticker-track">
+        {repeated.map((item, i) => (
+          <span key={i} className="hero-ticker-item">
+            {item}
+            <span className="hero-ticker-dot" />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const stats = [
   { number: '20+', label: 'Anos de mercado' },
@@ -70,22 +99,22 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="hero-section texture-noise texture-noise-dark relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-20 md:pb-28"
+      className="hero-section texture-noise texture-noise-dark relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-20"
     >
       <PaintStrokeSVG />
 
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
+        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(232,93,4,0.14) 0%, transparent 70%)',
-          transform: 'translate(35%, -35%)',
+          background: 'radial-gradient(circle, rgba(232,93,4,0.12) 0%, transparent 70%)',
+          transform: 'translate(30%, -35%)',
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-40 left-0 w-80 h-80 rounded-full pointer-events-none"
+        className="absolute bottom-32 left-0 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(240,165,0,0.055) 0%, transparent 70%)',
           transform: 'translateX(-40%)',
         }}
         aria-hidden="true"
@@ -95,7 +124,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
           className="flex items-center gap-3 mb-8 md:mb-10"
         >
           <span
@@ -103,10 +132,10 @@ const Hero = () => {
             style={{ background: 'var(--color-ember)' }}
           />
           <span
-            className="text-xs font-bold uppercase tracking-[0.22em]"
-            style={{ color: 'rgba(245,240,232,0.55)', fontFamily: 'var(--font-body)' }}
+            className="text-xs font-bold uppercase tracking-[0.24em]"
+            style={{ color: 'rgba(245,240,232,0.45)', fontFamily: 'var(--font-body)' }}
           >
-            Pintura Profissional — Rio de Janeiro
+            Pintura Profissional — {companyData.city}
           </span>
         </motion.div>
 
@@ -115,21 +144,21 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           aria-label="Transformamos ambientes com pintura de alto padrão"
-          className="mb-8 md:mb-12 lg:mb-14"
+          className="mb-10 md:mb-14"
           style={{
             fontFamily: 'var(--font-display)',
             fontStyle: 'italic',
             fontOpticalSizing: 'auto',
-            fontSize: 'clamp(2.4rem, 8.5vw, 8rem)',
-            lineHeight: '0.93',
-            letterSpacing: '-0.03em',
+            fontSize: 'clamp(2.6rem, 9vw, 8.5rem)',
+            lineHeight: '0.91',
+            letterSpacing: '-0.035em',
             color: 'var(--color-cream)',
           }}
         >
           {headingWords.map((word, i) => (
             <motion.span
               key={i}
-              className="inline-block mr-[0.18em]"
+              className="inline-block mr-[0.16em]"
               variants={wordItem}
               style={word.accent ? { color: 'var(--color-ember)' } : {}}
             >
@@ -138,20 +167,20 @@ const Hero = () => {
           ))}
         </motion.h1>
 
-        <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-20">
+        <div className="flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-24">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.85, ease: 'easeOut' }}
-            className="flex flex-col gap-5 max-w-lg"
+            transition={{ duration: 0.65, delay: 0.9, ease: 'easeOut' }}
+            className="flex flex-col gap-6 max-w-lg"
           >
             <p
               className="text-base md:text-lg leading-relaxed"
-              style={{ color: 'rgba(245,240,232,0.6)', fontFamily: 'var(--font-body)' }}
+              style={{ color: 'rgba(245,240,232,0.55)', fontFamily: 'var(--font-body)' }}
             >
               Serviços de pintura residencial, comercial e reformas com acabamento
               profissional em toda a região do{' '}
-              <span style={{ color: 'var(--color-cream)', fontWeight: 500 }}>
+              <span style={{ color: 'var(--color-cream)', fontWeight: 600 }}>
                 {companyData.city}
               </span>
               .
@@ -159,18 +188,25 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href={`https://wa.me/${companyData.phone}`}
+                href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-2 px-7 py-4 rounded-full font-bold text-sm transition-colors active:scale-95"
+                className="group flex items-center justify-center gap-2.5 px-7 py-4 rounded-full font-bold text-sm transition-all active:scale-95"
                 style={{
                   background: 'var(--color-ember)',
                   color: 'var(--color-cream)',
                   fontFamily: 'var(--font-body)',
                   letterSpacing: '0.02em',
+                  boxShadow: '0 4px 20px rgba(232,93,4,0.35)',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = 'var(--color-clay)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'var(--color-ember)'}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'var(--color-clay)';
+                  e.currentTarget.style.boxShadow = '0 6px 28px rgba(232,93,4,0.45)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'var(--color-ember)';
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(232,93,4,0.35)';
+                }}
               >
                 Solicitar Orçamento
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -179,16 +215,16 @@ const Hero = () => {
                 href="#portfolio"
                 className="flex items-center justify-center px-7 py-4 rounded-full font-bold text-sm transition-all"
                 style={{
-                  border: '1.5px solid rgba(245,240,232,0.22)',
+                  border: '1.5px solid rgba(245,240,232,0.2)',
                   color: 'var(--color-cream)',
                   fontFamily: 'var(--font-body)',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.5)';
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.45)';
                   e.currentTarget.style.background = 'rgba(245,240,232,0.06)';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.22)';
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.2)';
                   e.currentTarget.style.background = 'transparent';
                 }}
               >
@@ -198,10 +234,10 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.05, ease: 'easeOut' }}
-            className="flex flex-row flex-wrap gap-6 md:gap-10 lg:gap-12 lg:pb-1"
+            transition={{ duration: 0.65, delay: 1.1, ease: 'easeOut' }}
+            className="flex flex-row flex-wrap gap-8 md:gap-14 lg:gap-16 lg:pb-2"
           >
             {stats.map((stat, idx) => (
               <div key={idx} className="hero-stat-item">
@@ -213,6 +249,7 @@ const Hero = () => {
         </div>
       </div>
 
+      <HeroTicker />
     </section>
   );
 };

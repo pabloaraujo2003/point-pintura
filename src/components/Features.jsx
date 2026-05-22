@@ -1,58 +1,117 @@
 import { motion } from 'framer-motion';
 import { features } from '../data/config';
 import { BadgeCheck } from 'lucide-react';
-import paintingInteriorImage from '../assets/painting-interior.svg';
 
 const Features = () => {
   return (
-    <section className="py-16 md:py-24 bg-slate-900 text-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-primary-300 font-bold uppercase tracking-widest text-xs md:text-sm mb-3 md:mb-4 block">Nossos Diferenciais</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-5 md:mb-8 leading-tight">Um visual acolhedor com base em <span className="text-primary-300">qualidade, clareza e confiança</span></h2>
-            <p className="text-slate-400 text-base md:text-lg mb-8 md:mb-12 max-w-xl">
-              Cada detalhe da apresentação foi pensado para refletir o jeito da empresa trabalhar: proximidade no atendimento, segurança no processo e resultado final de alto padrão.
-            </p>
+    <section
+      className="py-16 md:py-24 relative overflow-hidden"
+      style={{ background: 'rgba(245,240,232,0.03)', borderTop: '1px solid rgba(245,240,232,0.06)' }}
+    >
+      <div
+        className="absolute top-0 right-0 pointer-events-none"
+        style={{
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(232,93,4,0.06) 0%, transparent 70%)',
+          transform: 'translate(30%, -30%)',
+        }}
+        aria-hidden="true"
+      />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-6 md:gap-y-10">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex gap-3 md:gap-4">
-                  <div className="bg-primary-600/20 p-2 rounded-lg flex-shrink-0 h-fit border border-primary-600/30">
-                    <BadgeCheck className="w-6 h-6 text-primary-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-1.5 md:mb-2 text-sm md:text-base">{feature.title}</h4>
-                    <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-start">
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative mt-2 md:mt-0"
+            transition={{ duration: 0.75 }}
+            className="lg:w-2/5"
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 md:border-8 border-slate-800">
-               <img
-                src={paintingInteriorImage}
-                alt="Pintor detalhista"
-                className="w-full h-auto object-cover"
+            <div className="flex items-center gap-3 mb-4">
+              <span
+                className="inline-block w-6 h-px flex-shrink-0"
+                style={{ background: 'var(--color-ember)' }}
               />
+              <span
+                className="text-xs font-bold uppercase tracking-[0.24em]"
+                style={{ color: 'var(--color-ember)', fontFamily: 'var(--font-body)' }}
+              >
+                Nossos Diferenciais
+              </span>
             </div>
-            {/* Background elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary-600/10 blur-[100px] -z-10" />
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-600/20 rounded-full blur-3xl" />
+            <h2
+              className="font-bold mb-5"
+              style={{
+                fontFamily: 'var(--font-heading)',
+                color: 'var(--color-cream)',
+                fontSize: 'clamp(1.9rem, 5vw, 3.5rem)',
+                lineHeight: '1.08',
+              }}
+            >
+              O padrão que{' '}
+              <span
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontStyle: 'italic',
+                  color: 'var(--color-ember)',
+                }}
+              >
+                entregamos
+              </span>{' '}
+              em cada projeto
+            </h2>
+            <p
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: 'rgba(245,240,232,0.5)', fontFamily: 'var(--font-body)' }}
+            >
+              Cada detalhe da nossa atuação reflete o jeito que trabalhamos: proximidade
+              no atendimento, segurança no processo e resultado final com alto padrão de execução.
+            </p>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75 }}
+            className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6"
+          >
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.07 }}
+                className="feature-item"
+              >
+                <div className="feature-icon-wrap">
+                  <BadgeCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4
+                    className="font-bold mb-1"
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      color: 'var(--color-cream)',
+                      fontSize: '0.95rem',
+                    }}
+                  >
+                    {feature.title}
+                  </h4>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: 'rgba(245,240,232,0.45)', fontFamily: 'var(--font-body)' }}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
       </div>
     </section>

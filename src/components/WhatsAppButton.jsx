@@ -1,11 +1,11 @@
 import { MessageSquare } from 'lucide-react';
-import { companyData } from '../data/config';
+import { whatsappLink } from '../data/config';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href={`https://wa.me/${companyData.phone}`}
+      href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

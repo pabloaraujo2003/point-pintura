@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Paintbrush } from 'lucide-react';
-import { companyData } from '../data/config';
+import { companyData, whatsappLink } from '../data/config';
 import { cn } from '../lib/utils';
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-50 transition-all duration-300 px-4 py-3",
+        "fixed top-0 inset-x-0 z-50 transition-[background,backdrop-filter,border-color,padding] duration-300 px-4 py-3",
         scrolled && "py-2"
       )}
       style={scrolled ? {
@@ -53,7 +53,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href={`https://wa.me/${companyData.phone}`}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-full text-sm font-semibold transition-all border bg-ember text-cream border-ember hover:bg-clay hover:border-clay"
@@ -93,7 +93,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href={`https://wa.me/${companyData.phone}`}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="text-cream text-center py-3 rounded-xl font-bold mt-2"
