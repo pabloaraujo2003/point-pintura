@@ -23,15 +23,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-[background,backdrop-filter,border-color,padding] duration-300 px-4 py-3",
-        scrolled && "py-2"
-      )}
-      style={scrolled ? {
-        background: 'rgba(15,14,10,0.92)',
-        backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(245,240,232,0.07)',
-      } : {}}
+      className="fixed top-0 inset-x-0 z-50 px-4"
+      style={{
+        paddingTop:    scrolled ? '0.5rem'                        : '0.75rem',
+        paddingBottom: scrolled ? '0.5rem'                        : '0.75rem',
+        background:    scrolled ? 'rgba(15,14,10,0.92)'           : 'transparent',
+        backdropFilter:        scrolled ? 'blur(16px)' : 'blur(0px)',
+        WebkitBackdropFilter:  scrolled ? 'blur(16px)' : 'blur(0px)',
+        borderBottom:  `1px solid ${scrolled ? 'rgba(245,240,232,0.07)' : 'transparent'}`,
+        transition: 'padding 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, border-color 0.3s ease',
+      }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
         <a href="#home" className="flex items-center gap-2.5 group min-w-0">
