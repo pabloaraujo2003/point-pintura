@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { companyData, whatsappLink } from '../data/config';
+import openContactModal from '../lib/openContactModal';
 
 const wordContainer = {
   hidden: {},
@@ -231,6 +232,24 @@ const Hero = () => {
                 Ver Portfólio
               </a>
             </div>
+
+            <button
+              onClick={openContactModal}
+              className="flex items-center gap-2 w-fit text-sm transition-colors"
+              style={{
+                color: 'rgba(245,240,232,0.4)',
+                fontFamily: 'var(--font-body)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'rgba(245,240,232,0.75)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,240,232,0.4)'}
+            >
+              <Mail className="w-3.5 h-3.5" />
+              Prefere e-mail? Solicite por aqui
+            </button>
           </motion.div>
 
           <motion.div

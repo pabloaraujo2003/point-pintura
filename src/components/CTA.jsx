@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { MessageSquare, Phone, Mail } from 'lucide-react';
 import { companyData, whatsappLink } from '../data/config';
+import openContactModal from '../lib/openContactModal';
 
-const CTA = ({ onOpenModal }) => {
+const CTA = () => {
   return (
     <section className="cta-ember-section texture-noise py-20 md:py-32">
       {/* Decorative radial glows */}
@@ -164,7 +165,7 @@ const CTA = ({ onOpenModal }) => {
               </a>
 
               <button
-                onClick={onOpenModal}
+                onClick={openContactModal}
                 className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-semibold text-sm transition-all"
                 style={{
                   background: 'transparent',

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Clock, Brush } from 'lucide-react';
+import { ShieldCheck, Clock, Brush, Mail } from 'lucide-react';
 import { companyData, whatsappLink } from '../data/config';
+import openContactModal from '../lib/openContactModal';
 import aboutImage from '../assets/loja-comercial.png';
 
 const About = () => {
@@ -132,28 +133,53 @@ const About = () => {
               ))}
             </div>
 
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl font-bold transition-all text-sm active:scale-95"
-              style={{
-                border: '1.5px solid rgba(245,240,232,0.22)',
-                color: 'var(--color-cream)',
-                fontFamily: 'var(--font-body)',
-                background: 'transparent',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = 'rgba(245,240,232,0.07)';
-                e.currentTarget.style.borderColor = 'rgba(245,240,232,0.45)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.borderColor = 'rgba(245,240,232,0.22)';
-              }}
-            >
-              Falar com {companyData.ownersLabel}
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold transition-all text-sm active:scale-95"
+                style={{
+                  border: '1.5px solid rgba(245,240,232,0.22)',
+                  color: 'var(--color-cream)',
+                  fontFamily: 'var(--font-body)',
+                  background: 'transparent',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(245,240,232,0.07)';
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.45)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.borderColor = 'rgba(245,240,232,0.22)';
+                }}
+              >
+                Falar com {companyData.ownersLabel}
+              </a>
+
+              <button
+                onClick={openContactModal}
+                className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl font-semibold text-sm transition-all active:scale-95"
+                style={{
+                  background: 'rgba(232,93,4,0.1)',
+                  border: '1.5px solid rgba(232,93,4,0.25)',
+                  color: 'var(--color-ember)',
+                  fontFamily: 'var(--font-body)',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(232,93,4,0.18)';
+                  e.currentTarget.style.borderColor = 'rgba(232,93,4,0.5)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(232,93,4,0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(232,93,4,0.25)';
+                }}
+              >
+                <Mail className="w-4 h-4" />
+                Orçamento por e-mail
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>

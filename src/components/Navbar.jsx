@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Paintbrush } from 'lucide-react';
+import { Menu, X, Paintbrush, Mail } from 'lucide-react';
 import { companyData, whatsappLink } from '../data/config';
+import openContactModal from '../lib/openContactModal';
 import { cn } from '../lib/utils';
 
 const Navbar = () => {
@@ -53,6 +54,30 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={openContactModal}
+            title="Solicitar orçamento por e-mail"
+            className="p-2 rounded-full transition-all"
+            style={{
+              color: 'rgba(245,240,232,0.5)',
+              background: 'transparent',
+              border: '1.5px solid rgba(245,240,232,0.15)',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = 'var(--color-cream)';
+              e.currentTarget.style.borderColor = 'rgba(245,240,232,0.4)';
+              e.currentTarget.style.background = 'rgba(245,240,232,0.06)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = 'rgba(245,240,232,0.5)';
+              e.currentTarget.style.borderColor = 'rgba(245,240,232,0.15)';
+              e.currentTarget.style.background = 'transparent';
+            }}
+            aria-label="Solicitar orçamento por e-mail"
+          >
+            <Mail className="w-4 h-4" />
+          </button>
           <a
             href={whatsappLink()}
             target="_blank"

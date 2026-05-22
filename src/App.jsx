@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +16,12 @@ import './App.css';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    const handler = () => setIsModalOpen(true);
+    document.addEventListener('open-contact-modal', handler);
+    return () => document.removeEventListener('open-contact-modal', handler);
+  }, []);
+
   return (
     <div className="min-h-screen bg-ink">
       <Navbar />
@@ -27,7 +33,7 @@ function App() {
         <Portfolio />
         <BeforeAfter />
         <Testimonials />
-        <CTA onOpenModal={() => setIsModalOpen(true)} />
+        <CTA />
       </main>
       <Footer />
       <WhatsAppButton />
